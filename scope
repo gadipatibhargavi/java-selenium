@@ -15,9 +15,6 @@ public class scope {
 		
 		System.setProperty("webdriver.chrome.driver", "D:\\Hulk/chromedriver.exe");
 
-		// webdriver.chrome.driver -> value of the path chromdriver.exe present in the
-		// local
-
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
