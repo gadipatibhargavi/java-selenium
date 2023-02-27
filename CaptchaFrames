@@ -1,0 +1,42 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class capchaFrames {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\Driver/chromedriver.exe");
+
+		// webdriver.chrome.driver -> value of the path chromdriver.exe present in the
+		// local
+
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.google.com/recaptcha/api2/demo");
+		Thread.sleep(2000);
+		
+		// click on i'm not robot
+		driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='recaptcha-demo']/div/div/iframe")));
+		driver.findElement(By.xpath("//*[@id='recaptcha-anchor']/div[1]")).click();
+		
+		//get out of the frame
+		
+		driver.switchTo().defaultContent();
+		
+		//verification
+		Thread.sleep(2000);
+		driver.switchTo().frame(driver.findElement(By.xpath("/html/body/div[2]/div[4]/iframe")));
+		driver.findElement(By.xpath("//*[@id='recaptcha-verify-button']")).click();
+	}
+	
+
+
+}
