@@ -13,9 +13,6 @@ public class capchaFrames {
 		
 		System.setProperty("webdriver.chrome.driver", "D:\\Driver/chromedriver.exe");
 
-		// webdriver.chrome.driver -> value of the path chromdriver.exe present in the
-		// local
-
 		WebDriver driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
